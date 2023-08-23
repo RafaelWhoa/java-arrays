@@ -47,7 +47,7 @@ public class ArrayList<T> {
             if (size == backingArray.length){
                 T[] resizedArray = (T[]) new Object[size * 2];
                 for (int i = size - 1; i >= 0; i--){
-                    resizedArray[size + 1] = backingArray[i];
+                    resizedArray[i + 1] = backingArray[i];
                 }
                 resizedArray[0] = data;
                 size++;

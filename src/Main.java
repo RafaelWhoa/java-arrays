@@ -6,9 +6,13 @@ public class Main {
         arrayList.addToBack(1);
         arrayList.addToBack(2);
         arrayList.addToBack(4);
+        arrayList.addToBack(4);
+        arrayList.addToBack(4);
+        arrayList.addToBack(4);
+        arrayList.addToBack(4);
+        arrayList.addToBack(4);
+        arrayList.addToBack(4);
         arrayList.addToFront(3);
-        arrayList.removeFromBack();
-        arrayList.removeFromFront();
         for (Object num : arrayList.getBackingArray()) {
             System.out.println(num);
         }
