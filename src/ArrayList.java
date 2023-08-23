@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 /**
  * Your implementation of an ArrayList.
  */
@@ -39,7 +41,7 @@ public class ArrayList<T> {
      */
     public void addToFront(T data) {
         if(data == null){
-            throw new IllegalArgumentException("Error: some exception was thrown");
+            throw new IllegalArgumentException("Error: Data must not be null!");
         }
         else {
             if (size == backingArray.length){
@@ -71,7 +73,7 @@ public class ArrayList<T> {
      */
     public void addToBack(T data) {
         if(data == null){
-            throw new IllegalArgumentException("Error: some exception was thrown");
+            throw new IllegalArgumentException("Error: Data must not be null!");
         }
         else {
             if (size == backingArray.length){
@@ -118,8 +120,15 @@ public class ArrayList<T> {
      * @throws java.util.NoSuchElementException if the list is empty
      */
     public T removeFromBack() {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
-        return null;
+        if (size != 0){
+            T itemToRemove = backingArray[size - 1];
+            backingArray[size - 1] = null;
+            size--;
+            return itemToRemove;
+        }
+        else {
+            throw new NoSuchElementException("Error: List is empty!");
+        }
     }
 
     /**
