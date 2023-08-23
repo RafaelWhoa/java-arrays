@@ -161,12 +161,22 @@ public class ArrayList<T> {
         return size;
     }
 
+    /**
+     * Shift elements 1 space to the right.
+     *
+     * @throws java.util.NoSuchElementException when list is empty
+     */
     private void shiftRightElements(){
         for (int i = size - 1; i >= 0; i--){
             backingArray[i + 1] = backingArray[i];
         }
     }
 
+    /**
+     * Shift elements 1 space to the left.
+     *
+     * @throws java.util.NoSuchElementException when list is empty
+     */
     private void shiftLeftElements(){
         for (int i = 1; i <= size - 1; i++){
             backingArray[i - 1] = backingArray[i];
