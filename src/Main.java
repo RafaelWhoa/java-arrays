@@ -8,7 +8,7 @@ public class Main {
         arrayList.addToBack(4);
         arrayList.addToFront(3);
         arrayList.removeFromBack();
-        //Integer[] backingArray = arrayList.getBackingArray();
+        arrayList.removeFromFront();
         for (Object num : arrayList.getBackingArray()) {
             System.out.println(num);
         }

@@ -54,9 +54,7 @@ public class ArrayList<T> {
                 backingArray = resizedArray;
             }
             else {
-                for (int i = size - 1; i >= 0; i--){
-                    backingArray[i + 1] = backingArray[i];
-                }
+                shiftRightElements();
                 backingArray[0] = data;
                 size++;
             }
@@ -105,8 +103,14 @@ public class ArrayList<T> {
      * @throws java.util.NoSuchElementException if the list is empty
      */
     public T removeFromFront() {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
-        return null;
+        if (size != 0){
+            T itemToRemove = backingArray[0];
+            shiftLeftElements();
+            return itemToRemove;
+        }
+        else {
+            throw new NoSuchElementException("Error: List is empty!");
+        }
     }
 
     /**
@@ -155,5 +159,19 @@ public class ArrayList<T> {
     public int size() {
         // DO NOT MODIFY THIS METHOD!
         return size;
+    }
+
+    private void shiftRightElements(){
+        for (int i = size - 1; i >= 0; i--){
+            backingArray[i + 1] = backingArray[i];
+        }
+    }
+
+    private void shiftLeftElements(){
+        for (int i = 1; i <= size - 1; i++){
+            backingArray[i - 1] = backingArray[i];
+        }
+        backingArray[size - 1] = null;
+        size--;
     }
 }
